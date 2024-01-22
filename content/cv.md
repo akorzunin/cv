@@ -1,13 +1,15 @@
-# Resume
++++
+title = 'About me'
+date = 2024-01-22T14:54:55+03:00
+draft = false
++++
 
-# ALEXEY KORZUNIN
-
-> I'm a Python developer based in Kirov. I have 1 year of freelance experience making back-ends, APIs, CRUDs and models for databases, telegram/discord bots
+ I'm a Python developer based in Kirov. I have 1 year of freelance experience making back-ends, APIs, CRUDs and models for databases, telegram/discord bots
 
 I have scientific research background in the field of physics. That makes me feel fluent w/ lots of complicated terms and understand problems that can be solved mathematically.
 
 My focus area for the past few years has been back-end development, but I'm also skilled in embedded developing, circuit engineering/design/layout.
-> 
+>
 
 ---
 
@@ -65,7 +67,7 @@ Applied to embedded projects with ATmega328P and ATmega2560
 
 ### [Russian](https://www.notion.so/5733d47ca81b4f05a4647fc98ccce321?pvs=21)
 
-Native speaker 
+Native speaker
 
 ### English
 
@@ -129,9 +131,3 @@ St. Petersburg State Electrotechnical University "LETI"
 Field: 11.03.04. - Electronics and nanoelectronics
 
 Profile: Microelectronics and Solid State Electronics
-
----
-
----
-
----
