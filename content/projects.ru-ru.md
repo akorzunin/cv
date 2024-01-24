@@ -1,10 +1,7 @@
 +++
-title = 'Проекты'
-date = 2024-01-22T14:54:55+03:00
-draft = false
 +++
 
-### Проекты
+# Проекты
 
 [GitHub - akorzunin/Spotify_save_DW](https://github.com/akorzunin/Spotify_save_DW)
 

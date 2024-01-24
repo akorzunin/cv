@@ -1,6 +1,4 @@
 +++
-date = 2024-01-22T14:54:55+03:00
-draft = false
 +++
 
 # Contact info

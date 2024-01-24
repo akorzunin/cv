@@ -1,43 +1,16 @@
 +++
-title = 'About me'
-date = 2024-01-22T14:54:55+03:00
-draft = false
 +++
 
- I'm a Python developer based in Kirov. I have 1 year of freelance experience making back-ends, APIs, CRUDs and models for databases, telegram/discord bots
+# About me
 
-I have scientific research background in the field of physics. That makes me feel fluent w/ lots of complicated terms and understand problems that can be solved mathematically.
-
-My focus area for the past few years has been back-end development, but I'm also skilled in embedded developing, circuit engineering/design/layout.
->
-
----
+...
 
 ---
 
 # Contact information
 
-[https://img.shields.io/badge/Gmail-akorzunin123@gmail.com-lightgrey?logo=gmail](https://img.shields.io/badge/Gmail-akorzunin123@gmail.com-lightgrey?logo=gmail)
-
-[https://img.shields.io/badge/Telegram-@akorzunin-lightgrey?logo=Telegram](https://img.shields.io/badge/Telegram-@akorzunin-lightgrey?logo=Telegram)
-
-[https://img.shields.io/badge/-LinkedIn-lightgrey?logo=LinkedIn](https://img.shields.io/badge/-LinkedIn-lightgrey?logo=LinkedIn)
-
-📱 Phone
-
-[https://img.shields.io/badge/-My%20Github-lightgrey?logo=Github](https://img.shields.io/badge/-My%20Github-lightgrey?logo=Github)
-
-[akorzunin123@gmail.com](mailto:akorzunin123@gmail.com)
-
-@[akorzunin](https://t.me/akorzunin)
-
-[alexey-korzunin-297b22219](https://www.linkedin.com/in/alexey-korzunin-297b22219/)
-
-+79522053114
-
-[https://github.com/akorzunin](https://github.com/akorzunin)
-
----
+<!-- unwrap -->
+{{< relref "contact.md" >}}
 
 ---
 
@@ -47,25 +20,25 @@ My focus area for the past few years has been back-end development, but I'm also
 
 ### Python ⭐️⭐️⭐️⭐️⭐️
 
-My "native" programming language, I've worked with it for over 1 year.
+...
+
+### Go⭐️⭐️⭐️
+
+...
 
 ### SQL⭐️⭐️⭐️
 
-Mostly using SQLAlchemy to access data, but sometimes use SQL directly with pandas
+...
 
-### JS⭐️⭐️⭐️
+### JS/TS⭐️⭐️⭐️
 
-Only used Typescript with React Webpack and Tailwind to make a websites
-
-### C/C++⭐️
-
-Applied to embedded projects with ATmega328P and ATmega2560
+...
 
 ---
 
 ## 🗣 Languages
 
-### [Russian](https://www.notion.so/5733d47ca81b4f05a4647fc98ccce321?pvs=21)
+### Russian
 
 Native speaker
 
@@ -75,46 +48,29 @@ Technical, upper-intermediate
 
 ---
 
----
+## 💻 Work experience
 
-# **👩🏻‍💻** Work experience
+### Back-end developer
 
-## Python developer
+...
 
-Freelance *– (Jun 2021 - Present)*
+### Python developer
 
-### Back-end
-
-- Developed REST API with FastAPI framework
-- Integrated SQLite3 database to FastAPI back-end
-- Developed websites with Jinja2 templating language
-
-### Bots
-
-- Developed auction bot with telegram API for e-commerce
-- Developed notification bot with Telegram and Binance API
-
-### Embedded systems
-
-- Created control panel for intelligent team games
-
-### Projects
-
-[GitHub - akorzunin/Spotify_save_DW](https://github.com/akorzunin/Spotify_save_DW)
-
-[GitHub - akorzunin/Malygos: Control panel for intelligent team games](https://github.com/akorzunin/Malygos)
-
-[GitHub - akorzunin/PR_spectra_handler: This program is designed for the processing of photoreflection spectra, specifically for fitting the shape of the interference signal into the spectrum.](https://github.com/akorzunin/PR_spectra_handler)
+Freelance *– (Jun 2021 - Sep 2022)*
 
 ---
 
+## Open source projects
+
+{{< relref "projects.md" >}}
+
 ---
 
-# 📚 Education
+## 📚 Education
 
-Magister
+Bachelor, Magister
 
-*2019-2021*
+*2015-2021*
 
 St. Petersburg State Electrotechnical University "LETI"
 
@@ -122,12 +78,3 @@ Field: 11.04.04. - Electronics and nanoelectronics
 
 Profile: Nanoelectronics and Photonics
 
-Bachelor
-
-*2015-2019*
-
-St. Petersburg State Electrotechnical University "LETI"
-
-Field: 11.03.04. - Electronics and nanoelectronics
-
-Profile: Microelectronics and Solid State Electronics
