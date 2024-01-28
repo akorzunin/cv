@@ -1,6 +1,3 @@
-+++
-+++
-
 # Проекты
 
 [GitHub - akorzunin/Spotify_save_DW](https://github.com/akorzunin/Spotify_save_DW)
