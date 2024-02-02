@@ -18,5 +18,6 @@ wiht NvChad configuration template
 Telegram bot that provides auction features via telegram interface asdfasfsd
 
 Tech stack:
+
 - Backend: {{< icon "python.svg" >}}Python {{< icon "fastapi.svg" >}}Fastapi {{< icon "sqlite.svg" >}}SQLite
 - Frontend: PTB RESTAPI
