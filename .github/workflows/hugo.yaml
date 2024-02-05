@@ -28,11 +28,18 @@ defaults:
     shell: bash
 
 jobs:
-  # Build job
+  check:
+    name: run pre-commit hooks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v3
+      - uses: pre-commit/action@v3.0.0
   build:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.121.0
+    needs: check
     steps:
       - name: Install Hugo CLI
         run: |
