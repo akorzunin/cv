@@ -15,7 +15,7 @@ wiht NvChad configuration template
 
 ## [Telegram auction bot](https://github.com/akorzunin/telegram_auction_bot)
 
-Telegram bot that provides auction features via telegram interface asdfasfsd
+Telegram bot that provides auction features via telegram interface
 
 Tech stack:
 

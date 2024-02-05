@@ -75,9 +75,9 @@ url = "mailto:akorzunin123@gmail.com"
 languageName = "to English"
 
 [[languages.en.menu.main]]
-name = "CV"
+name = "Resume"
 weight = 1
-url = "cv/"
+url = "resume/"
 
 [[languages.en.menu.main]]
 name = "Projects"
@@ -100,7 +100,7 @@ info = "Бэкенд разработчик"
 [[languages.ru-ru.menu.main]]
 name = "Резюме"
 weight = 1
-url = "cv/"
+url = "resume/"
 
 [[languages.ru-ru.menu.main]]
 name = "Проекты"
@@ -108,6 +108,6 @@ weight = 2
 url = "projects/"
 
 [[languages.ru-ru.menu.main]]
-name = "Контактная информация"
+name = "Контакты"
 weight = 3
 url = "contact/"
