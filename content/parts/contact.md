@@ -2,10 +2,10 @@
 
 📱 Phone: +79522053114
 
-{{< icon "telegram.svg" >}}&nbsp;Telegram: [@akorzunin](https://t.me/akorzunin)
+{{< icon "telegram.svg" >}} Telegram: [@akorzunin](https://t.me/akorzunin)
 
-{{< icon "linkedin.svg" >}}&nbsp;[LinkedIn](https://www.linkedin.com/in/alexey-korzunin-297b22219/)
+{{< icon "linkedin.svg" >}} [LinkedIn](https://www.linkedin.com/in/alexey-korzunin-297b22219/)
 
-{{< icon "github.svg" >}}&nbsp;GitHub: [akorzunin](https://github.com/akorzunin/)
+{{< icon "github.svg" >}} GitHub: [akorzunin](https://github.com/akorzunin/)
 
-{{< icon "discord.svg" >}}&nbsp;Discord: akorz / Akorz#7331
+{{< icon "discord.svg" >}} Discord: akorz / Akorz#7331

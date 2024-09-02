@@ -4,14 +4,12 @@ Fullstack вэб приложение для автоматического со
 
 Технологии:
 
-- Backend: {{< icon "python.svg" >}}Python {{< icon "fastapi.svg" >}}Fastapi TinyDB
-- Frontend: {{< icon "typescript.svg" >}}TypeScript {{< icon "react.svg" >}}React {{< icon "tailwind.svg" >}}Tailwind
+- Backend: {{< icon "python.svg" >}} Python {{< icon "fastapi.svg" >}} Fastapi TinyDB
+- Frontend: {{< icon "typescript.svg" >}} TypeScript {{< icon "react.svg" >}}React {{< icon "tailwind.svg" >}} Tailwind
 
 ## [NVC (NeoVim Config)](https://github.com/akorzunin/nvc)
 
-Мой конфиг для текстового редектора {{< icon "neovim.svg" >}}NeoVim, написанный на {{< icon "lua.svg" >}}lua
-с использованием шаблона NvChad
-
+Мой конфиг для текстового редектора NeoVim, написанный на lua с использованием шаблона NvChad
 
 ## [Telegram auction bot](https://github.com/akorzunin/telegram_auction_bot)
 
@@ -19,5 +17,5 @@ Fullstack вэб приложение для автоматического со
 
 Технологии:
 
-- Backend: {{< icon "python.svg" >}}Python {{< icon "fastapi.svg" >}}Fastapi {{< icon "sqlite.svg" >}}SQLite
+- Backend: {{< icon "python.svg" >}} Python {{< icon "fastapi.svg" >}} Fastapi {{< icon "sqlite.svg" >}} SQLite
 - Frontend: PTB RESTAPI

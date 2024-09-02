@@ -20,7 +20,7 @@ Backend-developer with 2 years of experience as a freelancer and developer in th
 
 - Developed and configured autodocs (sphinx+rtd)
 - Developed gates (REST/SOAP) for intergations with extranal API's
-- Developed web ui({{< icon "react.svg" >}}React+{{< icon "tailwind.svg" >}}Tailwind) и бэк({{< icon "fastapi.svg" >}}fastapi+{{< icon "postgres.svg" >}}postgres) for ml model
+- Developed web ui({{< icon "react.svg" >}}React+{{< icon "tailwind.svg" >}}Tailwind) and backend({{< icon "fastapi.svg" >}}fastapi+{{< icon "postgresql.svg" >}}postgres) for ml model
 
 ### Freelance: _Jun 2021 - Sep 2022_
 
