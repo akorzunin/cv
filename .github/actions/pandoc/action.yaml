@@ -7,6 +7,8 @@ runs:
     - uses: actions/checkout@v4
 
     - uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
 
     - uses: arduino/setup-task@v2
 
@@ -28,6 +30,6 @@ runs:
 
     - uses: actions/upload-artifact@v4.4.0
       with:
-        name: output
+        name: pandoc-output
         path: ./static/files
         retention-days: 1
