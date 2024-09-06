@@ -1,6 +1,4 @@
 +++
 +++
 
-# Contact info
-
-{{% include "parts/contact.md" %}}
+{{% include "parts/contacts/contacts.md" %}}

@@ -1,6 +1,4 @@
 +++
 +++
 
-# Мои пэт проекты
-
-{{% include "parts/projects.ru-ru.md" %}}
+{{% include "parts/projects/projects.ru-ru.md" %}}

@@ -1,8 +1,10 @@
+## Контактная информация
+
 📧 E-mail: <akorzunin123@gmail.com>
 
-📱 Phone: +79522053114
+📱 Телефон: +79522053114
 
-{{< icon "telegram.svg" >}} Telegram: [@akorzunin](https://t.me/akorzunin)
+{{< icon "telegram.svg" >}} Телеграм: [@akorzunin](https://t.me/akorzunin)
 
 {{< icon "linkedin.svg" >}} [LinkedIn](https://www.linkedin.com/in/alexey-korzunin-297b22219/)
 

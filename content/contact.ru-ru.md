@@ -1,6 +1,4 @@
 +++
 +++
 
-# Контактная информация
-
-{{% include "parts/contact.ru-ru.md" %}}
+{{% include "parts/contacts/contacts.ru-ru.md" %}}
