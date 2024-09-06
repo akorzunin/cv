@@ -1,0 +1,5 @@
+geometry: margin=1.5cm
+header-includes:
+  - \pagenumbering{gobble}
+
+mainfont: Open Sans

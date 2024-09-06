@@ -1,0 +1,98 @@
+version: "3"
+
+vars:
+  CONF_FILE: ./pandoc/config.yml
+  SANITIZE_FILES_INPUT: $( find ./content/parts -type f -name '*.md' )
+  PANDOC_INPUT_DIR: sanitized
+  PANDOC_OUT_DIR: static/files
+  LANGUAGE_CODE: ""
+  PANDOC_FILES_INPUT: >-
+    intro
+    contacts
+    experience
+    stack
+    languages
+    education
+
+tasks:
+  sanitize-files:
+    sources:
+      - ./content/parts/**/*.md
+    cmds:
+      - python ./pandoc/sanitize_parts.py {{ .SANITIZE_FILES_INPUT }}
+
+  int-generate-pdf:
+    internal: true
+    cmds:
+      - mkdir -p {{ .PANDOC_OUT_DIR }}
+      - >-
+        pandoc
+        --pdf-engine=xelatex
+        $(
+          python ./pandoc/get_input_files.py \
+          {{ .PANDOC_FILES_INPUT }} \
+          -i {{ .PANDOC_INPUT_DIR}} \
+          -l {{ .LANGUAGE_CODE }}
+        )
+        -s
+        -o {{ .PANDOC_OUT_DIR }}/resume{{ .LANGUAGE_CODE }}.pdf
+        --metadata-file={{ .CONF_FILE }}
+
+  int-generate-md:
+    internal: true
+    cmds:
+      - mkdir -p {{ .PANDOC_OUT_DIR }}
+      - >-
+        pandoc
+        -f markdown_strict+smart
+        --markdown-headings=atx
+        $(
+          python ./pandoc/get_input_files.py \
+          {{ .PANDOC_FILES_INPUT }} \
+          -i {{ .PANDOC_INPUT_DIR}} \
+          -l {{ .LANGUAGE_CODE }}
+        )
+        -o {{ .PANDOC_OUT_DIR }}/resume{{ .LANGUAGE_CODE }}.md
+
+  generate-md:
+    deps:
+      - sanitize-files
+    cmds:
+      - task: int-generate-md
+
+  generate-md-ru:
+    deps:
+      - sanitize-files
+    cmds:
+      - task: int-generate-md
+        vars:
+          LANGUAGE_CODE: .ru-ru
+
+  generate-pdf:
+    deps:
+      - sanitize-files
+    cmds:
+      - task: int-generate-pdf
+
+  generate-pdf-ru:
+    deps:
+      - sanitize-files
+    cmds:
+      - task: int-generate-pdf
+        vars:
+          LANGUAGE_CODE: .ru-ru
+
+  generate-all:
+    aliases:
+      - all
+    deps:
+      - sanitize-files
+    cmds:
+      # - task: int-generate-pdf
+      # - task: int-generate-pdf
+      #   vars:
+      #     LANGUAGE_CODE: .ru-ru
+      - task: int-generate-md
+      - task: int-generate-md
+        vars:
+          LANGUAGE_CODE: .ru-ru
