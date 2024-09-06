@@ -7,6 +7,7 @@ vars:
   PANDOC_OUT_DIR: static/files
   LANGUAGE_CODE: ""
   PANDOC_FILES_INPUT: >-
+    title
     intro
     contacts
     experience
@@ -82,17 +83,22 @@ tasks:
         vars:
           LANGUAGE_CODE: .ru-ru
 
+  int-generate-all:
+    internal: true
+    deps:
+      - task: int-generate-pdf
+      - task: int-generate-pdf
+        vars:
+          LANGUAGE_CODE: .ru-ru
+      - task: int-generate-md
+      - task: int-generate-md
+        vars:
+          LANGUAGE_CODE: .ru-ru
+
   generate-all:
     aliases:
       - all
     deps:
       - sanitize-files
     cmds:
-      # - task: int-generate-pdf
-      # - task: int-generate-pdf
-      #   vars:
-      #     LANGUAGE_CODE: .ru-ru
-      - task: int-generate-md
-      - task: int-generate-md
-        vars:
-          LANGUAGE_CODE: .ru-ru
+      - task: int-generate-all

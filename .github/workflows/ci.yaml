@@ -1,0 +1,14 @@
+on:
+  push:
+    branches:
+      - pandoc-test
+  workflow_dispatch:
+
+jobs:
+  pandoc-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run pandoc
+        uses: ./.github/actions/pandoc

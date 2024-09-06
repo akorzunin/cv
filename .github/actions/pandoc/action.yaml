@@ -1,0 +1,33 @@
+name: pandoc run
+description: aboba
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+
+    - uses: arduino/setup-task@v2
+
+    - uses: pandoc/actions/setup@v1
+      with:
+        version: 3.2
+
+    - name: install pdf engine and fonts
+      shell: bash
+      run: >-
+        sudo apt-get install -y
+        texlive-xetex
+        texlive-lang-cyrillic
+        fonts-open-sans
+
+    - name: Buld all files w/ pandoc
+      shell: bash
+      run: task all
+
+    - uses: actions/upload-artifact@v4.4.0
+      with:
+        name: output
+        path: ./static/files
+        retention-days: 1
