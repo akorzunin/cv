@@ -1,7 +1,7 @@
 ## My tech stack
 
-**Backend**: {{< icon "go.svg" >}}Golang {{< icon "python.svg" >}}Python {{< icon "fastapi.svg" >}}fastapi pydantic
+**Backend**: #Golang #Python #fastapi pydantic
 
-**DB**: {{< icon "postgresql.svg" >}}Postgres {{< icon "sqlite.svg" >}}SQLite {{< icon "mongo.svg" >}}MongoDb {{< icon "redis.svg" >}}Redis {{< icon "db.svg" >}}TinyDb
+**DB**: #Postgres #SQLite #MongoDb #Redis #TinyDb
 
-**Frontend**: {{< icon "typescript.svg" >}}JS/TS {{< icon "react.svg" >}}React {{< icon "tailwind.svg" >}}Tailwind {{< icon "vite.svg" >}}Vite
+**Frontend**: #JS/TS #React #Tailwind #Vite
