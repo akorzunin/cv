@@ -2,7 +2,7 @@ version: "3"
 
 vars:
   CONF_FILE: ./pandoc/config.yml
-  SANITIZE_FILES_INPUT: $( find ./content/parts -type f -name '*.md' )
+  SANITIZE_FILES_INPUT: $( find ./content/parts ./content/r -type f -name '*.md' )
   PANDOC_INPUT_DIR: sanitized
   PANDOC_OUT_DIR: static/files
   LANGUAGE_CODE: ""

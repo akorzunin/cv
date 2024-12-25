@@ -21,3 +21,4 @@ hugo.linux
 static/files
 sanitized
 .task
+*.pyc
