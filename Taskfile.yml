@@ -98,7 +98,44 @@ tasks:
   generate-all:
     aliases:
       - all
+    desc: Generate all files
     deps:
       - sanitize-files
     cmds:
       - task: int-generate-all
+
+  debug-hugo:
+    desc: Serve site
+    aliases:
+      - dh
+    cmds:
+      - hugo server -D
+
+  pandoc-generate:
+    desc: Generate resume from sindle localtion
+    deps:
+      - sanitize-files
+    cmds:
+      - task: int-generate-md
+        vars:
+          PANDOC_FILES_INPUT: "{{ .PANDOC_FILES_INPUT }}"
+          PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
+          LANGUAGE_CODE: .ru-ru
+          # ...
+      - task: int-generate-pdf
+
+  task-single-resume:
+    desc: Generate single resume
+    cmds:
+      - task: pandoc-generate
+        vars:
+          INPUT_LOC: r/bdv1
+          PANDOC_FILES_INPUT: >-
+            title
+            r/bdv1/custom
+            intro
+            contacts
+            experience
+            stack
+            languages
+            education

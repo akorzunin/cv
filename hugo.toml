@@ -16,7 +16,7 @@ author = "Alexey Korzunin"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "A lexey Korzunin's personal website"
 keywords = "blog,developer,personal"
-info = ["Back-end developer", ]
+info = ["Back-end developer"]
 avatarURL = "images/avatar.png"
 favicon_32 = "/cv/favicon.ico"
 favicon_16 = "/cv/favicon.ico"
@@ -111,3 +111,8 @@ url = "projects/"
 name = "Контакты"
 weight = 3
 url = "contact/"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+unsafe = true
