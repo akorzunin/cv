@@ -1,10 +1,11 @@
 +++
 +++
 
-{{% include "parts/download/download.md" %}}
+{{% download dir="r/bdv1" %}}
 
-{{% include "parts/intro/intro.md" %}}
+{{% include "custom.ru-ru.md" %}}
 
+{{% include "parts/intro/intro.ru-ru.md" %}}
 ---
 
 {{% include "parts/contacts/contacts.md" %}}
