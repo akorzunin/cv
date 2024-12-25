@@ -52,14 +52,14 @@ def sanitize_file(input_path: str):
     output_dir = Path("sanitized")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    # Get the filename and extension
-    filename = Path(input_path).name
-    output_path = output_dir / filename
+    parsed_path = Path(input_path)
+    sub_dir = ""
+    if parsed_path.parts[1] != "parts":
+        sub_dir = Path(*parsed_path.parts[1:-1])
+        (output_dir / sub_dir).mkdir(parents=True, exist_ok=True)
 
-    # Write the sanitized content to the output file
-    with open(output_path, "w") as f:
-        f.write(cleaned_content)
-
+    output_path = output_dir / sub_dir / parsed_path.name
+    output_path.write_text(cleaned_content)
     print(f"Sanitized {input_path} -> {output_path}")
 
 
