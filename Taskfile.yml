@@ -6,6 +6,7 @@ vars:
   PANDOC_INPUT_DIR: sanitized
   PANDOC_OUT_DIR: static/files
   LANGUAGE_CODE: ""
+  IGNORE_ERRORS: ""
   PANDOC_FILES_INPUT: >-
     title
     intro
@@ -17,13 +18,19 @@ vars:
 
 tasks:
   sanitize-files:
+    desc: Sanitize files
+    aliases:
+      - sf
     sources:
       - ./content/parts/**/*.md
+      - ./content/r/**/*.md
     cmds:
       - python ./pandoc/sanitize_parts.py {{ .SANITIZE_FILES_INPUT }}
 
   int-generate-pdf:
     internal: true
+    deps:
+      - sanitize-files
     cmds:
       - mkdir -p {{ .PANDOC_OUT_DIR }}
       - >-
@@ -37,10 +44,12 @@ tasks:
         )
         -s
         -o {{ .PANDOC_OUT_DIR }}/resume{{ .LANGUAGE_CODE }}.pdf
-        --metadata-file={{ .CONF_FILE }}
+        --metadata-file={{ .CONF_FILE }} {{ .IGNORE_ERRORS }}
 
   int-generate-md:
     internal: true
+    deps:
+      - sanitize-files
     cmds:
       - mkdir -p {{ .PANDOC_OUT_DIR }}
       - >-
@@ -53,35 +62,15 @@ tasks:
           -i {{ .PANDOC_INPUT_DIR}} \
           -l {{ .LANGUAGE_CODE }}
         )
-        -o {{ .PANDOC_OUT_DIR }}/resume{{ .LANGUAGE_CODE }}.md
+        -o {{ .PANDOC_OUT_DIR }}/resume{{ .LANGUAGE_CODE }}.md {{ .IGNORE_ERRORS }}
 
   generate-md:
-    deps:
-      - sanitize-files
     cmds:
       - task: int-generate-md
-
-  generate-md-ru:
-    deps:
-      - sanitize-files
-    cmds:
-      - task: int-generate-md
-        vars:
-          LANGUAGE_CODE: .ru-ru
 
   generate-pdf:
-    deps:
-      - sanitize-files
     cmds:
       - task: int-generate-pdf
-
-  generate-pdf-ru:
-    deps:
-      - sanitize-files
-    cmds:
-      - task: int-generate-pdf
-        vars:
-          LANGUAGE_CODE: .ru-ru
 
   int-generate-all:
     internal: true
@@ -99,8 +88,6 @@ tasks:
     aliases:
       - all
     desc: Generate all files
-    deps:
-      - sanitize-files
     cmds:
       - task: int-generate-all
 
@@ -114,18 +101,33 @@ tasks:
   pandoc-generate:
     desc: Generate resume from sindle localtion
     deps:
-      - sanitize-files
-    cmds:
       - task: int-generate-md
         vars:
           PANDOC_FILES_INPUT: "{{ .PANDOC_FILES_INPUT }}"
           PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
           LANGUAGE_CODE: .ru-ru
-          # ...
+      - task: int-generate-md
+        vars:
+          PANDOC_FILES_INPUT: "{{ .PANDOC_FILES_INPUT }}"
+          PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
+          IGNORE_ERRORS: "|| true"
       - task: int-generate-pdf
+        vars:
+          PANDOC_FILES_INPUT: "{{ .PANDOC_FILES_INPUT }}"
+          PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
+          LANGUAGE_CODE: .ru-ru
+      - task: int-generate-pdf
+        vars:
+          PANDOC_FILES_INPUT: "{{ .PANDOC_FILES_INPUT }}"
+          PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
+          IGNORE_ERRORS: "|| true"
 
   task-single-resume:
     desc: Generate single resume
+    aliases:
+      - tsr
+    deps:
+      - sanitize-files
     cmds:
       - task: pandoc-generate
         vars:
