@@ -26,13 +26,13 @@ defaults:
 jobs:
   check:
     name: run pre-commit hooks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - uses: pre-commit/action@v3.0.1
 
   run-pandoc:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
@@ -40,7 +40,7 @@ jobs:
         uses: ./.github/actions/pandoc
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       HUGO_VERSION: 0.134.1
     needs:
@@ -87,7 +87,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     needs: build
     steps:
       - name: Deploy to GitHub Pages
