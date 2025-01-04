@@ -83,6 +83,7 @@ tasks:
       - task: int-generate-md
         vars:
           LANGUAGE_CODE: .ru-ru
+      - task: bdv1-resume
 
   generate-all:
     aliases:
@@ -122,7 +123,7 @@ tasks:
           PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
           IGNORE_ERRORS: "|| true"
 
-  task-single-resume:
+  bdv1-resume:
     desc: Generate single resume
     aliases:
       - tsr
@@ -135,9 +136,8 @@ tasks:
           PANDOC_FILES_INPUT: >-
             title
             r/bdv1/custom
-            intro
             contacts
-            experience
+            r/bdv1/custom_exp
             stack
             languages
             education
