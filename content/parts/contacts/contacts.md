@@ -7,4 +7,3 @@
 {{< icon "telegram.svg" >}} Telegram: [@akorzunin](https://t.me/akorzunin)
 
 {{< icon "github.svg" >}} GitHub: [akorzunin](https://github.com/akorzunin/)
-
