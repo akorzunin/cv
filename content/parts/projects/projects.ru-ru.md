@@ -1,23 +1,19 @@
 ## Мои пэт проекты
 
-## [Spotify_save_DW](https://github.com/akorzunin/Spotify_save_DW)
+## [DWMan](https://github.com/akorzunin/dwman)
 
-Fullstack вэб приложение для автоматического сохрания плейлистов через АПИ Spotify
+Fullstack вэб приложение для автоматического сохрания плейлистов через АПИ Spotify. Поддерживает OAuth 2.0 авторизацию, фоновые задачи для уведомлиений и интрекативный интерфейс для сборки плейлистов.
 
 Технологии:
 
 - Backend: {{< icon "python.svg" >}} Python {{< icon "fastapi.svg" >}} Fastapi TinyDB
 - Frontend: {{< icon "typescript.svg" >}} TypeScript {{< icon "react.svg" >}}React {{< icon "tailwind.svg" >}} Tailwind
+- Тесты: pytest vitest playwright
 
-## [NVC (NeoVim Config)](https://github.com/akorzunin/nvc)
+## [duckdns-ui](https://github.com/akorzunin/duckdns-ui)
 
-Мой конфиг для текстового редектора NeoVim, написанный на lua с использованием шаблона NvChad
+Self-hosted веб приложение для обновления динамических ip адресов в сервисе duckdns.org. Бэкенд разработан на Go, фронтенд на React. Поддерживает просмотр логов и ошибок, автоматическую перезагрузку и автоматическое обновление ip адресов.
 
-## [Telegram auction bot](https://github.com/akorzunin/telegram_auction_bot)
+## [SuperIcosahedron](https://github.com/akorzunin/SuperIcosahedron)
 
-Телеграм бот для проведения аукционов
-
-Технологии:
-
-- Backend: {{< icon "python.svg" >}} Python {{< icon "fastapi.svg" >}} Fastapi {{< icon "sqlite.svg" >}} SQLite
-- Frontend: PTB RESTAPI
+Аркадня игра написанная на движке Godot. Пока находится в стадии разработки. Тестовые сборки для Windows, Linux(x11), Android и веб версия доступны по адресу [supericosahedron.akorz.duckdns.org](https://supericosahedron.akorz.duckdns.org)
