@@ -84,6 +84,7 @@ tasks:
         vars:
           LANGUAGE_CODE: .ru-ru
       - task: bdv1-resume
+      - task: fsv1-resume
 
   generate-all:
     aliases:
@@ -125,8 +126,6 @@ tasks:
 
   bdv1-resume:
     desc: Generate single resume
-    aliases:
-      - tsr
     deps:
       - sanitize-files
     cmds:
@@ -138,6 +137,23 @@ tasks:
             r/bdv1/custom_intro
             contacts
             r/bdv1/custom_exp
+            stack
+            languages
+            education
+
+  fsv1-resume:
+    desc: Generate single resume
+    deps:
+      - sanitize-files
+    cmds:
+      - task: pandoc-generate
+        vars:
+          INPUT_LOC: r/fsv1
+          PANDOC_FILES_INPUT: >-
+            title
+            r/fsv1/fsv1_intro
+            contacts
+            r/fsv1/fsv1_exp
             stack
             languages
             education

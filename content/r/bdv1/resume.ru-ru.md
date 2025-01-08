@@ -3,7 +3,7 @@
 
 {{% download dir="r/bdv1" locale=".ru-ru" %}}
 
-{{% include "custom.ru-ru.md" %}}
+{{% include "custom_intro.ru-ru.md" %}}
 
 ---
 
