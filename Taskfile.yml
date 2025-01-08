@@ -97,7 +97,7 @@ tasks:
     aliases:
       - dh
     cmds:
-      - hugo server -D
+      - hugo server -D --disableFastRender
 
   pandoc-generate:
     desc: Generate resume from sindle localtion
