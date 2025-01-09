@@ -21,9 +21,9 @@ tasks:
     desc: Sanitize files
     aliases:
       - sf
-    sources:
-      - ./content/parts/**/*.md
-      - ./content/r/**/*.md
+    # sources:
+    #   - ./content/parts/**/*.md
+    #   - ./content/r/**/*.md
     cmds:
       - python ./pandoc/sanitize_parts.py {{ .SANITIZE_FILES_INPUT }}
 
