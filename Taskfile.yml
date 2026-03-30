@@ -175,3 +175,20 @@ tasks:
             stack
             languages
             education
+
+  setup-hugo:
+    desc: Setup hugo
+    vars:
+      HUGO_VERSION: 0.134.1
+    cmds:
+      - CGO_ENABLED=1 go install -tags extended github.com/gohugoio/hugo@v{{ .HUGO_VERSION }}
+
+  setup-pandoc:
+    desc: Setup pandoc
+    vars:
+      PANDOC_VERSION: "3.1"
+    cmds:
+      - docker build -t local-pandoc:{{ .PANDOC_VERSION }} .
+      - echo '#!/usr/bin/env bash' > ~/.local/bin/pandoc
+      - echo 'docker run --rm --volume $(pwd):/data local-pandoc:{{ .PANDOC_VERSION }} $@' >> ~/.local/bin/pandoc
+      - chmod +x ~/.local/bin/pandoc

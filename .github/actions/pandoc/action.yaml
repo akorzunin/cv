@@ -1,5 +1,5 @@
 name: pandoc run
-description: aboba
+description: Action to run pandoc and generate final pdf/md files
 
 runs:
   using: "composite"
@@ -14,7 +14,7 @@ runs:
 
     - uses: pandoc/actions/setup@v1
       with:
-        version: 3.2
+        version: "3.2"
 
     - name: install pdf engine and fonts
       shell: bash
