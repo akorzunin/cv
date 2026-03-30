@@ -21,9 +21,6 @@ tasks:
     desc: Sanitize files
     aliases:
       - sf
-    # sources:
-    #   - ./content/parts/**/*.md
-    #   - ./content/r/**/*.md
     cmds:
       - python ./pandoc/sanitize_parts.py {{ .SANITIZE_FILES_INPUT }}
 
@@ -85,7 +82,6 @@ tasks:
           LANGUAGE_CODE: .ru-ru
       - task: bdv1-resume
       - task: bdv2-resume
-      - task: fsv1-resume
 
   generate-all:
     aliases:
@@ -93,6 +89,7 @@ tasks:
     desc: Generate all files
     cmds:
       - task: int-generate-all
+      - echo "✅ All files generated at {{ .PANDOC_OUT_DIR }}"
 
   debug-hugo:
     desc: Serve site
@@ -155,23 +152,6 @@ tasks:
             r/bdv2/bdv2_intro
             contacts
             r/bdv2/bdv2_exp
-            stack
-            languages
-            education
-
-  fsv1-resume:
-    desc: Generate single resume
-    deps:
-      - sanitize-files
-    cmds:
-      - task: pandoc-generate
-        vars:
-          INPUT_LOC: r/fsv1
-          PANDOC_FILES_INPUT: >-
-            title
-            r/fsv1/fsv1_intro
-            contacts
-            r/fsv1/fsv1_exp
             stack
             languages
             education
