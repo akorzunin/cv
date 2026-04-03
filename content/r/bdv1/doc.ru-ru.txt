@@ -1,0 +1,7 @@
+title
+r/bdv1/custom_intro
+contacts
+r/bdv1/custom_exp
+stack
+languages
+education

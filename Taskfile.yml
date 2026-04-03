@@ -1,20 +1,7 @@
 version: "3"
 
 vars:
-  CONF_FILE: ./pandoc/config.yml
   SANITIZE_FILES_INPUT: $( find ./content/parts ./content/r -type f -name '*.md' )
-  PANDOC_INPUT_DIR: sanitized
-  PANDOC_OUT_DIR: static/files
-  LANGUAGE_CODE: ""
-  IGNORE_ERRORS: ""
-  PANDOC_FILES_INPUT: >-
-    title
-    intro
-    contacts
-    experience
-    stack
-    languages
-    education
 
 tasks:
   sanitize-files:
@@ -24,72 +11,14 @@ tasks:
     cmds:
       - python ./pandoc/sanitize_parts.py {{ .SANITIZE_FILES_INPUT }}
 
-  int-generate-pdf:
-    internal: true
-    deps:
-      - sanitize-files
-    cmds:
-      - mkdir -p {{ .PANDOC_OUT_DIR }}
-      - >-
-        pandoc
-        --pdf-engine=xelatex
-        $(
-          python ./pandoc/get_input_files.py \
-          {{ .PANDOC_FILES_INPUT }} \
-          -i {{ .PANDOC_INPUT_DIR}} \
-          -l {{ .LANGUAGE_CODE }}
-        )
-        -s
-        -o {{ .PANDOC_OUT_DIR }}/resume{{ .LANGUAGE_CODE }}.pdf
-        --metadata-file={{ .CONF_FILE }} {{ .IGNORE_ERRORS }}
-
-  int-generate-md:
-    internal: true
-    deps:
-      - sanitize-files
-    cmds:
-      - mkdir -p {{ .PANDOC_OUT_DIR }}
-      - >-
-        pandoc
-        -f markdown_strict+smart
-        --markdown-headings=atx
-        $(
-          python ./pandoc/get_input_files.py \
-          {{ .PANDOC_FILES_INPUT }} \
-          -i {{ .PANDOC_INPUT_DIR}} \
-          -l {{ .LANGUAGE_CODE }}
-        )
-        -o {{ .PANDOC_OUT_DIR }}/resume{{ .LANGUAGE_CODE }}.md {{ .IGNORE_ERRORS }}
-
-  generate-md:
-    cmds:
-      - task: int-generate-md
-
-  generate-pdf:
-    cmds:
-      - task: int-generate-pdf
-
-  int-generate-all:
-    internal: true
-    deps:
-      - task: int-generate-pdf
-      - task: int-generate-pdf
-        vars:
-          LANGUAGE_CODE: .ru-ru
-      - task: int-generate-md
-      - task: int-generate-md
-        vars:
-          LANGUAGE_CODE: .ru-ru
-      - task: bdv1-resume
-      - task: bdv2-resume
-
-  generate-all:
+  generate-all-docs:
     aliases:
       - all
     desc: Generate all files
+    deps:
+      - sanitize-files
     cmds:
-      - task: int-generate-all
-      - echo "✅ All files generated at {{ .PANDOC_OUT_DIR }}"
+      - python ./pandoc/generate_docs.py ./content/r
 
   debug-hugo:
     desc: Serve site
@@ -97,64 +26,6 @@ tasks:
       - dh
     cmds:
       - hugo server -D --disableFastRender
-
-  pandoc-generate:
-    desc: Generate resume from sindle localtion
-    deps:
-      - task: int-generate-md
-        vars:
-          PANDOC_FILES_INPUT: "{{ .PANDOC_FILES_INPUT }}"
-          PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
-          LANGUAGE_CODE: .ru-ru
-      - task: int-generate-md
-        vars:
-          PANDOC_FILES_INPUT: "{{ .PANDOC_FILES_INPUT }}"
-          PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
-          IGNORE_ERRORS: "|| true"
-      - task: int-generate-pdf
-        vars:
-          PANDOC_FILES_INPUT: "{{ .PANDOC_FILES_INPUT }}"
-          PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
-          LANGUAGE_CODE: .ru-ru
-      - task: int-generate-pdf
-        vars:
-          PANDOC_FILES_INPUT: "{{ .PANDOC_FILES_INPUT }}"
-          PANDOC_OUT_DIR: "static/files/{{ .INPUT_LOC }}"
-          IGNORE_ERRORS: "|| true"
-
-  bdv1-resume:
-    desc: Generate single resume
-    deps:
-      - sanitize-files
-    cmds:
-      - task: pandoc-generate
-        vars:
-          INPUT_LOC: r/bdv1
-          PANDOC_FILES_INPUT: >-
-            title
-            r/bdv1/custom_intro
-            contacts
-            r/bdv1/custom_exp
-            stack
-            languages
-            education
-
-  bdv2-resume:
-    desc: Generate single resume
-    deps:
-      - sanitize-files
-    cmds:
-      - task: pandoc-generate
-        vars:
-          INPUT_LOC: r/bdv2
-          PANDOC_FILES_INPUT: >-
-            title
-            r/bdv2/bdv2_intro
-            contacts
-            r/bdv2/bdv2_exp
-            stack
-            languages
-            education
 
   setup-hugo:
     desc: Setup hugo
