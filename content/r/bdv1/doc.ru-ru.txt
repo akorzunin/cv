@@ -3,5 +3,5 @@ r/bdv1/custom_intro
 contacts
 r/bdv1/custom_exp
 stack
-languages
+r/bdv1/lang
 education

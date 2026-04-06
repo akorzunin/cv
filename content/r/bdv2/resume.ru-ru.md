@@ -1,4 +1,5 @@
 +++
+name = "bdv2"
 +++
 
 {{% download dir="r/bdv2" locale=".ru-ru" %}}

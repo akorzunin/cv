@@ -1,5 +1,6 @@
 +++
-title = "bdv1"
+name = "bdv1"
+date = "2026-04-06"
 +++
 
 {{% download dir="r/bdv1" locale=".ru-ru" %}}

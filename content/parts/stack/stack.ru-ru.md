@@ -1,3 +1,3 @@
 ## Мой стек
 
-#linux #git #docker #rabbitMQ #Golang #Python #fastapi #pydantic #Postgres #SQLite #MongoDb #boltDB #Redis #TinyDb #JS/TS #React #Tailwind #Vite #shadcn-ui
+#linux #git #docker #Golang #Python #fastapi #pydantic #Postgres #SQLite #boltDB #Redis #JS/TS #React #RabbitMQ #TailwindCSS #Vite #shadcn-ui

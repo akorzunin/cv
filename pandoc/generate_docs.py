@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 import argparse
-import multiprocessing
 import subprocess
 import sys
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, Executor
+from concurrent.futures import ThreadPoolExecutor, Executor
 from pathlib import Path
 
 DEFAULT_SANITIZED_DIR = Path("sanitized")
-DEFAULT_OUTPUT_DIR = Path("static/files")
+DEFAULT_OUTPUT_DIR = Path("static/files/r")
 DEFAULT_CONFIG = Path("pandoc/config.yml")
 
 
@@ -58,7 +57,7 @@ def generate_resume(
     output_dir: Path,
     config: Path,
     executor: Executor,
-) -> list[Path]:
+):
     segments = parse_doc_file(doc_path)
     files = build_file_paths(segments, sanitized_dir, language_code)
     if not files:
